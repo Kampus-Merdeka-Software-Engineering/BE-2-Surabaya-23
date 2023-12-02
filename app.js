@@ -3,14 +3,13 @@ const express = require("express");
 
 const app = express();
 const router = express.Router();
-const PORT = process.env.PORT || 3000;
 
-router.get("/hi", (req, res) => {
-  res.send("Hello");
-});
+const menuRoutes = require("./routes/menuRoutes");
 
 app.use(router);
+app.use(menuRoutes);
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
