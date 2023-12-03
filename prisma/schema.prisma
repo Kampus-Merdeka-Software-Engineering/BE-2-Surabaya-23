@@ -12,17 +12,17 @@ datasource db {
 
 model Menu {
   id     Int     @id @default(autoincrement())
-  type    String?
-  menuName String?
-  image String?
-  desc String?
+  type    String @db.VarChar(10)
+  menuName String @db.VarChar(25)
+  image String @db.VarChar(50)
+  desc String @db.VarChar(255)
   review Review[]
 }
 
 model Review {
   id Int @id @default(autoincrement())
-  personName String?
-  personReview String?
+  personName String @db.VarChar(25)
+  personReview String @db.VarChar(255)
   createdAt DateTime @default(now())
   menu Menu @relation(fields: [menuId],references: [id])
   menuId Int
