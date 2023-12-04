@@ -9,8 +9,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const menuRoutes = require("./routes/menuRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 
 app.use(menuRoutes);
+app.use(reviewRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
