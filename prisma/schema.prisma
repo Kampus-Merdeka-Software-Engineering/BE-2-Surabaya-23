@@ -15,7 +15,7 @@ model Menu {
   type    String @db.VarChar(10)
   menuName String @db.VarChar(25)
   image String @db.VarChar(50)
-  desc String @db.VarChar(255)
+  description String @db.VarChar(255)
   review Review[]
 }
 

@@ -12,7 +12,7 @@ const menuRoutes = require("./routes/menuRoutes");
 
 app.use(menuRoutes);
 
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
