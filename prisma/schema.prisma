@@ -15,7 +15,6 @@ model Menu {
   type    String @db.VarChar(10)
   menuName String @db.VarChar(25)
   image String @db.VarChar(50)
-  rating String @db.VarChar(5)
   description String @db.VarChar(300)
   review Review[]
 }
@@ -24,6 +23,7 @@ model Review {
   id Int @id @default(autoincrement())
   personName String @db.VarChar(25)
   personReview String @db.VarChar(300)
+  rating String @db.VarChar(5)
   createdAt DateTime @default(now())
   menu Menu @relation(fields: [menuId],references: [id])
   menuId Int
