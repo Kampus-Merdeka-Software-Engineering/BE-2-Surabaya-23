@@ -14,7 +14,7 @@ const reviewRoutes = require("./routes/reviewRoutes");
 app.use(menuRoutes);
 app.use(reviewRoutes);
 
-const PORT = process.env.PORT || 56988;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
