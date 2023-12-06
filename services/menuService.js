@@ -9,6 +9,17 @@ async function getAllMenus() {
   }
 }
 
+async function createMenu(menu) {
+  try {
+    await prisma.menu.create({
+      data: menu,
+    });
+  } catch (err) {
+    throw err;
+  }
+}
+
 module.exports = {
   getAllMenus,
+  createMenu,
 };
