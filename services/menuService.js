@@ -4,7 +4,7 @@ async function getAllMenus(type) {
   try {
     let menus;
 
-    if (type !== null) {
+    if (type !== undefined) {
       menus = await prisma.menu.findMany({
         where: {
           type: type,
