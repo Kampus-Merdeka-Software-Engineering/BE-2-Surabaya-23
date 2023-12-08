@@ -2,6 +2,7 @@ const menuService = require("../services/menuService");
 
 async function getAllMenus(req, res) {
   const type = req.query.type;
+  console.log(type);
 
   try {
     const menus = await menuService.getAllMenus(type);
