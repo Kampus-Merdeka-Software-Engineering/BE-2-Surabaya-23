@@ -1,9 +1,15 @@
 const menuService = require("../services/menuService");
 
 async function getAllMenus(req, res) {
-  const menus = await menuService.getAllMenus();
+  const type = req.query.type;
 
-  res.json(menus);
+  try {
+    const menus = await menuService.getAllMenus(type);
+    res.json(menus);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
 
 async function createMenu(req, res) {

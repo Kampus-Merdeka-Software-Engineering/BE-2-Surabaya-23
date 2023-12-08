@@ -1,8 +1,22 @@
 const prisma = require("../config/prisma");
 
-async function getAllMenus() {
+async function getAllMenus(type) {
   try {
-    const menus = await prisma.menu.findMany();
+    let menus;
+
+    if (type !== null) {
+      menus = await prisma.menu.findMany({
+        where: {
+          type: type,
+        },
+        select: {
+          name: true,
+        },
+      });
+    } else {
+      menus = await prisma.menu.findMany();
+    }
+
     return menus;
   } catch (err) {
     throw err;
