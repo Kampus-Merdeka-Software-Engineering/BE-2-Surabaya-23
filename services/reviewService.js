@@ -9,7 +9,7 @@ async function getAllReviews() {
         rating: true,
         menu: {
           select: {
-            name: true,
+            menuName: true,
           },
         },
       },
