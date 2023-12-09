@@ -4,13 +4,8 @@ async function getAllMenus(req, res) {
   const type = req.query.type;
   console.log("Type Parameter:", type);
 
-  try {
-    const menus = await menuService.getAllMenus(type);
-    res.json(menus);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+  const menus = await menuService.getAllMenus(type);
+  res.json(menus);
 }
 
 async function createMenu(req, res) {
