@@ -10,6 +10,7 @@ async function getAllMenus(type) {
           type: type,
         },
         select: {
+          id: true,
           menuName: true,
         },
       });
