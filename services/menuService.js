@@ -26,6 +26,8 @@ async function getAllMenus(type) {
 
 async function createMenu(menu) {
   try {
+    //made the menuId into Integer
+    review.menuId = parseInt(review.menuId);
     await prisma.menu.create({
       data: menu,
     });
