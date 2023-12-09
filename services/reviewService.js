@@ -7,8 +7,10 @@ async function getAllReviews() {
         personName: true,
         personReview: true,
         rating: true,
+        menuId: true,
         menu: {
           select: {
+            id: true,
             menuName: true,
           },
         },
