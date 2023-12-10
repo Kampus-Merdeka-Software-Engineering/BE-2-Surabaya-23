@@ -23,9 +23,15 @@ async function getAllReviews() {
 }
 
 async function createReview(review) {
+  const { personName, personReview, rating, menuId } = review;
   try {
     await prisma.review.create({
-      data: review,
+      data: {
+        personName,
+        personReview,
+        rating: rating.toString(),
+        menuId: Number(menuId),
+      },
     });
   } catch (err) {
     throw err;
